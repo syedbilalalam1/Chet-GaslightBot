@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Chet - Inspired by Michael Reeves",
+  "version": "1.0",
+  "description": "Caution: He's a bit of a jerk. (made by @syedbilalalam)",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "*://*.facebook.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.facebook.com/marketplace/*"],
+      "js": ["scraper.js", "input-handler.js", "content.js"],
+      "run_at": "document_end"
+    }
+  ]
+} 
